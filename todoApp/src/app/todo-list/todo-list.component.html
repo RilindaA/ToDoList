@@ -1,0 +1,48 @@
+<div class="sort-content">
+  <input type="date" (input)="onDateChange($event.target.value)">
+  <button class="sort-btn" (click)="filterByDate()">Filter by date</button>
+  <button class="sort-btn" (click)="filterByStatus()">Completed items</button>
+</div>
+<div class="table">
+  <form class="table-body" [formGroup]="todolistFG">
+    <table>
+      <thead>
+        <tr>
+          <th [appSort]="todos" data-order="desc" data-name="text">Name</th>
+          <th [appSort]="todos" data-order="desc" data-name="date">Date</th>
+          <th [appSort]="todos" data-order="desc" data-name="status">Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let todo of todos">
+          <td>
+            <p *ngIf="!todo.editMode">{{todo.text}}</p>
+            <ng-container *ngIf="todo.editMode">
+              <input type="text" class="add__description" placeholder="Edit todo" formControlName="text">
+            </ng-container>
+          </td>
+          <td>
+            <p *ngIf="!todo.editMode">{{todo.date | date: 'YYYY-MM-dd'}}</p>
+            <input type="date" formControlName="date" *ngIf="todo.editMode">
+          </td>
+          <td>
+            <p *ngIf="!todo.editMode">{{todo.status === true ? 'Completed' : 'Active'}}</p>
+            <input type="checkbox" formControlName="status" *ngIf="todo.editMode">
+          </td>
+          <td>
+            <div *ngIf="!todo.editMode">
+              <button class="edit-btn" (click)="edit(todo)"><i class="fa-solid fa-pen-to-square"></i></button>
+              <button class="delete-btn" (click)="deleteTodo(todo)"><i class="fa-solid fa-trash"></i></button>
+            </div>
+            <ng-container *ngIf="todo.editMode">
+              <button class="save-btn" (click)="save(todo)">Save</button>
+              <button class="cancel-btn" (click)="cancelEdit(todo)">Cancel</button>
+            </ng-container>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>
+  

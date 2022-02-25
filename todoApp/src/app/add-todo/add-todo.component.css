@@ -1,0 +1,17 @@
+.add-todo_content{
+    display: flex;
+    align-items: center;
+}
+
+.add__btn {
+    font-size: 25px;
+    background: #f7f7f7;
+    border: none;
+    color: #00d0ff;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 6px 15px;
+    border-radius: 5px;
+}
+.add__btn:active { transform: translateY(2px); }
+  

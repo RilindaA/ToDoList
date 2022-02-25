@@ -1,0 +1,85 @@
+.sort-content{
+  display: flex;
+  padding-top: 20px;
+}
+.sort-btn{
+  padding: 10px;
+  border: none;
+  color: darkgrey;
+}
+.sort-btn:hover{
+  background-color: white;
+  cursor: pointer;
+}
+.sort-btn:nth-child(2n){
+  margin-right: 20px;
+  margin-left: 20px;
+}
+.table {
+  padding-top: 20px;
+  width: 100%;
+}
+table thead tr th{
+  width: 250px;
+  background-color: white;
+  color: darkgrey;
+  height: 40px;
+  padding: 5px;
+  text-decoration: underline;
+}
+table thead tr th:hover{
+  cursor: pointer;
+}
+table thead tr th:last-child{
+  cursor: none;
+  text-decoration: none;
+}
+table tbody tr td{
+  width: 250px;
+  height: 30px;
+  text-align: center;
+  word-break: break-all;
+  padding: 5px;
+}
+table tbody tr{
+  background-color: white;
+}
+table tbody tr:nth-child(odd) {
+  background-color: rgb(238, 238, 238);
+}
+.edit-btn{
+  font-size: 20px;
+  margin-right: 20px;
+  border: none;
+  color: #00d0ff;
+  cursor: pointer;
+  background-color: transparent;
+}
+.delete-btn{
+  font-size: 20px;
+  border: none;
+  color: red;
+  cursor: pointer;
+  background-color: transparent;
+}
+.save-btn{
+  font-size: 15px;
+  background: #f7f7f7;
+  border: none;
+  color: #00d0ff;
+  cursor: pointer;
+  margin-right: 20px;
+  padding: 6px 15px;
+  border-radius: 5px;
+}
+.cancel-btn{
+  font-size: 15px;
+  background: #f7f7f7;
+  border: none;
+  color: red;
+  cursor: pointer;
+  margin-right: 20px;
+  padding: 6px 15px;
+  border-radius: 5px;
+}
+        

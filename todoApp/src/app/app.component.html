@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="add-todo">
+    <h1>To Do List</h1>
+    <app-add-todo (submitted)="onAddTodo($event)"></app-add-todo>
+  </div>
+  <div class="todo-list">
+    <app-todo-list [todos]="todos"></app-todo-list>
+  </div>
+</div>
